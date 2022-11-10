@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container"></div>
+    <script>
+        let container=document.querySelector('.container')
+        
+        const createBlocks=()=>{
+            for(let i=0;i<200;i++){
+                let blocks=document.createElement('div')
+                blocks.classList.add('block')
+                maxSize=30;
+                minSize=5;
+                let blockSize=Math.random()*(maxSize-minSize)+minSize;
+                blocks.style.width=blockSize+"px";
+                blocks.style.height=blockSize+"px";
+                blocks.style.left=Math.random()*100+"%";
+                blocks.style.top=Math.random()*100+"%";
+                blocks.style.backgroundColor=`rgb(${Math.random()*255},${Math.random()*255},${Math.random()*255})`;
+                blocks.style.boxShadow="0px 0px 15px #ccc"
+                container.appendChild(blocks)
+            };
+        }
+        createBlocks();
+    </script>
+</body>
+</html>
